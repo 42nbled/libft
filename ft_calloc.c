@@ -18,7 +18,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	size *= nmemb;
 	dst = malloc(size);
-	while (size--)
+	if (!dst)
+		return (NULL);
+	while (size > 0)
+	{
 		dst[size] = 0;
+		size--;
+	}
 	return ((void *)dst);
 }
