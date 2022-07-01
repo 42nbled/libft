@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:24:24 by nbled             #+#    #+#             */
-/*   Updated: 2022/06/24 12:24:24 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/01 11:10:19 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,20 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	j = 0;
-	while (big[i] != '\0' && little[j] != '\0' && i < len)
+	if (!(*little))
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
 	{
-		if (big[i] == little[j])
-			j++;
-		else
-			j = 0;
+		j = 0;
+		if (little[j] && big[i] == little[j])
+		{
+			while (little[j] && big[i + j] && little[j] != '\0'
+				&& (i + j) < len && big[i + j] == little[j])
+				j++;
+			if (little[j] == '\0')
+				return ((char *)(big + i));
+		}
 		i++;
 	}
-	if (little[j] == '\0')
-		return ((char *)big +(i - j));
-	else
-		return (0);
+	return (NULL);
 }

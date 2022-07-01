@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:22:58 by nbled             #+#    #+#             */
-/*   Updated: 2022/06/24 12:22:58 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/01 11:18:02 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!lst)
-		return ;
-	del (lst->content);
-	free (lst);
+	if (lst)
+	{
+		del(lst->content);
+		free (lst);
+	}
 }

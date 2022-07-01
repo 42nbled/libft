@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:04 by nbled             #+#    #+#             */
-/*   Updated: 2022/06/24 12:23:04 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/01 11:18:21 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
+	if (lst)
+		while (lst->next)
+			lst = lst->next;
 	return (lst);
 }
