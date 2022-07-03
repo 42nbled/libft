@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:22:22 by nbled             #+#    #+#             */
-/*   Updated: 2022/07/01 11:21:58 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/03 01:59:05 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*dst;
+	void	*dst;
 
-	size *= nmemb;
-	dst = malloc(size);
+	if (nmemb && (nmemb * size / nmemb) != size)
+		return (NULL);
+	dst = malloc(size * nmemb);
 	if (!dst)
 		return (NULL);
-	ft_bzero(dst, size);
+	ft_bzero(dst, size * nmemb);
 	return (dst);
 }

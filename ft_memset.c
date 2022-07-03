@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:31 by nbled             #+#    #+#             */
-/*   Updated: 2022/06/24 12:23:31 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/03 01:42:49 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return (NULL);
 	while (i < n)
-		((char *)s)[i++] = c;
+		((unsigned char *) s)[i++] = (unsigned char) c;
 	return (s);
 }
