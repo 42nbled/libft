@@ -6,13 +6,13 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:22:44 by nbled             #+#    #+#             */
-/*   Updated: 2022/06/24 12:22:44 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/10 18:40:18 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_size(unsigned int n)
+static int	get_size(unsigned int n)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -31,7 +31,7 @@ int	get_size(unsigned int n)
 	return (j);
 }
 
-char	*ft_itoa_cond_one(char *str, unsigned long nbr, int size)
+static char	*ft_itoa_cond_one(char *str, unsigned long nbr, int size)
 {
 	str[size + 1] = '\0';
 	while (size >= 0)
@@ -44,7 +44,7 @@ char	*ft_itoa_cond_one(char *str, unsigned long nbr, int size)
 	return (str);
 }
 
-char	*ft_itoa_cond_two(char *str, unsigned long nbr, int size)
+static char	*ft_itoa_cond_two(char *str, unsigned long nbr, int size)
 {
 	str[size] = '\0';
 	size--;
@@ -75,5 +75,7 @@ char	*ft_itoa(int n)
 		return (ft_itoa_cond_one(str, nbr, size));
 	}
 	str = malloc(sizeof(char) * size + 1);
+	if (!str)
+		return (NULL);
 	return (ft_itoa_cond_two(str, nbr, size));
 }

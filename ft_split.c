@@ -6,15 +6,13 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:23:51 by nbled             #+#    #+#             */
-/*   Updated: 2022/06/24 12:23:51 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/10 18:41:12 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include "libft.h"
-
-int	ft_count_words(const char *s, char c)
+static int	ft_count_words(const char *s, char c)
 {
 	int	i;
 	int	j;

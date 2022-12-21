@@ -6,13 +6,13 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:24:33 by nbled             #+#    #+#             */
-/*   Updated: 2022/07/03 04:52:23 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/10 18:42:02 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	chartrim(char const c, char const *str)
+static char	chartrim(char const c, char const *str)
 {
 	int	i;
 

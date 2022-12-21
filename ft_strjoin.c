@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:24:02 by nbled             #+#    #+#             */
-/*   Updated: 2022/07/03 04:06:54 by nbled            ###   ########.fr       */
+/*   Updated: 2022/07/10 18:48:16 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size1 = ft_strlen(s1);
 	size2 = ft_strlen(s2);
 	str = malloc(sizeof(char) *(size1 + size2) + 1);
+	if (!str)
+		return (NULL);
 	while (i < size1)
 	{
 		str[i] = s1[i];
